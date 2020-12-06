@@ -3,6 +3,12 @@
   justify-content: space-between;
 }
 
-.Appbar {
+/* .Appbar {
   background-color: #b53f8b;
+} */
+
+@media (min-width: 500px) {
+  .Menu {
+    display: none !important;
+  }
 }

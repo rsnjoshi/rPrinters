@@ -5,8 +5,13 @@ import ListItemText from "@material-ui/core/ListItemText";
 import classes from "./NavbarItems.module.css";
 
 const navbarItems = (props) => {
+  //   const flow = "row";
+  let NavClass = [classes.NavbarItems];
+  props.flow === "row"
+    ? NavClass.push(classes.row)
+    : NavClass.push(classes.column);
   return (
-    <List className={classes.NavbarItems_row}>
+    <List className={NavClass.join(" ")}>
       <ListItem button>
         <ListItemText primary="Home" />
       </ListItem>
