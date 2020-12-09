@@ -9,6 +9,7 @@ import {
   Divider,
 } from "@material-ui/core";
 import { Person, ShoppingCart, ExitToApp } from "@material-ui/icons";
+import classes from "./UserPortal.module.css";
 import Aux from "../../../hoc/Aux";
 
 const UserPortal = (props) => {

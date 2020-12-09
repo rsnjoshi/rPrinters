@@ -11,7 +11,7 @@
 }
 
 @media (max-width: 499px) {
-  .NavbarItems {
+  .NavbarItems.row {
     display: none;
   }
 }

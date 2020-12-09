@@ -7,8 +7,14 @@
   background-color: #b53f8b;
 } */
 
+/* beautify hove on Menu icon later */
+
 @media (min-width: 500px) {
   .Menu {
     display: none !important;
   }
+}
+
+.UserIcon {
+  color: red;
 }
