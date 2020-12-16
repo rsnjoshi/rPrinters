@@ -3,6 +3,7 @@ import classes from "./Layout.module.css";
 import Aux from "../../hoc/Aux";
 import Navbar from "../Navigation/Navbar/Navbar";
 import Sidebar from "../Navigation/Sidebar/Sidebar";
+import { Grid } from "@material-ui/core";
 
 class Layout extends Component {
   state = {
@@ -24,7 +25,9 @@ class Layout extends Component {
           showSideDrawer={this.state.showSideDrawer}
           hideSideDrawer={this.sideDrawerToggleHandler}
         />
-        <main>{this.props.children}</main>
+        <Grid container className={classes.mainGridContainer}>
+          {this.props.children}
+        </Grid>
       </Aux>
     );
   }

@@ -13,7 +13,7 @@ class Navbar extends Component {
 
   render() {
     return (
-      <AppBar className={classes.Appbar}>
+      <AppBar className={classes.Appbar} position="sticky">
         <Toolbar className={classes.Toolbar}>
           <Menu className={classes.Menu} onClick={this.eventListener} />
           <Typography variant="h6">Ratna Printers</Typography>
