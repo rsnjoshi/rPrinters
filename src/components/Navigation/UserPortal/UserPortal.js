@@ -16,10 +16,15 @@ const UserPortal = (props) => {
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = (event) => {
+    console.log(event.currentTarget);
     setAnchorEl(event.currentTarget);
   };
 
   const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const handleMouseLeave = () => {
     setAnchorEl(null);
   };
 
@@ -42,7 +47,7 @@ const UserPortal = (props) => {
           horizontal: "right",
         }}
       >
-        <List disablePadding>
+        <List disablePadding onMouseLeave={handleMouseLeave}>
           <ListItem button>
             <ListItemIcon>
               <Person />

@@ -1,24 +1,24 @@
 .sliderText {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
 }
 
 .sliderText > h2 {
-    margin: 2px;
-    font-size: 3.5em;
+  margin: 2px;
+  font-size: 3.5em;
 }
 
 .sliderText > p {
-    margin-top: 0.5em;
-    font-size: 1.5em;
+  margin-top: 0.5em;
+  font-size: 1.5em;
 }
 
 .sliderImage {
-    width: 100%;
-    height: 35em;
+  width: 100%;
+  height: auto;
 }
 
 .carouselPointer {
-    cursor: pointer;
+  cursor: pointer;
 }
