@@ -1,12 +1,21 @@
 import React, { Component } from "react";
 import { Card, CardContent, Grid, Typography, Button } from "@material-ui/core";
 import classes from "./ProductList.module.css";
+import { withRouter } from "react-router-dom";
 import Aux from "../../hoc/Aux";
 
 class ProductList extends Component {
   state = {
     itemList: ["Bag", "Envelope", "Box"],
   };
+
+  onOrderClickHandler = () => {
+    console.log("[ProductList.js] Order button clicked", this.props);
+    this.props.history.push("/quotation");
+    // let history = useHistory();
+    // history.push("/quotation"); // use this approach in functional component
+  };
+
   render() {
     const cardList = this.state.itemList.map((cardItem, index) => (
       <Grid item xs={12} key={index}>
@@ -24,7 +33,11 @@ class ProductList extends Component {
               className={classes.productDefination}
             >
               <Typography variant="h5">{cardItem}</Typography>
-              <Button variant="outlined" color="primary">
+              <Button
+                variant="outlined"
+                color="primary"
+                onClick={this.onOrderClickHandler}
+              >
                 ORDER
               </Button>
             </Grid>
@@ -40,4 +53,4 @@ class ProductList extends Component {
   }
 }
 
-export default ProductList;
+export default withRouter(ProductList);
