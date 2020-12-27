@@ -1,3 +1,15 @@
 .productCard {
   min-height: 200px;
 }
+
+.productDefination {
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: space-evenly;
+  border: 2px solid #3f51b5;
+  padding: 10px;
+  border-radius: 5px;
+}

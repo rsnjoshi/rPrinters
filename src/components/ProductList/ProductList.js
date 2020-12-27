@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, CardContent, Grid, Typography } from "@material-ui/core";
+import { Card, CardContent, Grid, Typography, Button } from "@material-ui/core";
 import classes from "./ProductList.module.css";
 import Aux from "../../hoc/Aux";
 
@@ -17,7 +17,20 @@ class ProductList extends Component {
           elevation={0}
         >
           <CardContent>
-            <Typography variant="h5">HEllo, I'm {cardItem}</Typography>
+            <Grid
+              item
+              xs={4}
+              direciton="column"
+              className={classes.productDefination}
+            >
+              <Typography variant="h5">{cardItem}</Typography>
+              <Button variant="outlined" color="primary">
+                ORDER
+              </Button>
+            </Grid>
+            <Grid item xs={8}>
+              <div className={classes.productAnimation}></div>
+            </Grid>
           </CardContent>
         </Card>
       </Grid>
