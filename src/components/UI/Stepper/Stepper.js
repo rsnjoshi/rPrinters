@@ -7,25 +7,26 @@ import {
 } from "@material-ui/core";
 import classes from "./Stepper.module.css";
 import { Button, Paper, Typography } from "@material-ui/core";
+// import { Switch } from "@material-ui/core";
+import Design from "./Design/Design";
+import Dimension from "./Dimension/Dimension";
 import Aux from "../../../hoc/Aux";
 
-const Stepper = () => {
-  const steps = ["Step 1", "Step 2", "Step 3"];
+const Stepper = (props) => {
+  const steps = ["Design", "Dimension", "Quantity", "Customer Info"];
   const [activeStep, setActiveStep] = useState(0);
 
   const getStepContent = (step) => {
     switch (step) {
       case 0:
-        return `For each ad campaign that you create, you can control how much
-              you're willing to spend on clicks and conversions, which networks
-              and geographical locations you want your ads to show on, and more.`;
+        return "helo";
+      // return <Design />;
       case 1:
-        return "An ad group contains one or more ads which target a shared set of keywords.";
+        return <Dimension />;
       case 2:
-        return `Try out different ad text to see what brings in the most customers,
-              and learn how to enhance your ads using features like ad extensions.
-              If you run into any problems with your ads, find out how to tell if
-              they're running and how to resolve approval issues.`;
+        return `Insert here with necessary form items`;
+      case 3:
+        return `Insert here with necessary form items`;
       default:
         return "Unknown step";
     }
@@ -44,6 +45,9 @@ const Stepper = () => {
 
   return (
     <Aux>
+      <Typography align="center" variant="h5">
+        Quotation for {props.itemName}
+      </Typography>
       <FormStepper activeStep={activeStep} orientation="vertical">
         {steps.map((label, index) => (
           <Step key={label}>

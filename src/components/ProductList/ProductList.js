@@ -7,11 +7,23 @@ import Aux from "../../hoc/Aux";
 class ProductList extends Component {
   state = {
     itemList: ["Bag", "Envelope", "Box"],
+    selectedItem: null,
   };
 
-  onOrderClickHandler = () => {
+  setSelectedItem = (name) => {
+    this.setState({
+      selectedItem: name,
+    });
+  };
+
+  onOrderClickHandler = (itemName) => {
     console.log("[ProductList.js] Order button clicked", this.props);
-    this.props.history.push("/quotation");
+    console.log(itemName);
+    // let queryString = itemName;
+    this.props.history.push({
+      pathname: "/quotation",
+      search: "?item=" + itemName,
+    });
     // let history = useHistory();
     // history.push("/quotation"); // use this approach in functional component
   };
@@ -36,7 +48,7 @@ class ProductList extends Component {
               <Button
                 variant="outlined"
                 color="primary"
-                onClick={this.onOrderClickHandler}
+                onClick={() => this.onOrderClickHandler(cardItem)}
               >
                 ORDER
               </Button>

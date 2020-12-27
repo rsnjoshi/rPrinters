@@ -19,9 +19,9 @@ class App extends Component {
         <Router>
           <Layout>
             <Switch>
+              <Route path="/quotation" component={QuotationForm} />
               <Route path="/products" component={Products} />
               <Route path="/contact" component={Contact} />
-              <Route path="/quotation" component={QuotationForm} />
               <Route path="/" exact component={Home} />
               <Redirect to="/" />
             </Switch>
