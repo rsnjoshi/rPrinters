@@ -17,6 +17,12 @@ class Layout extends Component {
     console.log("[layout.js] showsidedrawer ", this.state.showSideDrawer);
   };
 
+  forceHide = () => {
+    this.setState((prevState) => {
+      return {showSideDrawer: false}
+    })
+  }
+
   render() {
     return (
       <Aux>
@@ -24,6 +30,7 @@ class Layout extends Component {
         <Sidebar
           showSideDrawer={this.state.showSideDrawer}
           hideSideDrawer={this.sideDrawerToggleHandler}
+          clickHide={this.forceHide}
         />
         <Grid container className={classes.mainGridContainer}>
           {this.props.children}

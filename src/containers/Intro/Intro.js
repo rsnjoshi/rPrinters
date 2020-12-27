@@ -11,7 +11,7 @@ export class Intro extends Component {
       {
         name: "Envelops",
         description: "High Quality Envelops",
-        source: "images/envelope.jpg",
+        source: "images/envelope.jpeg",
         color: "orchid",
       },
       {
@@ -23,7 +23,7 @@ export class Intro extends Component {
       {
         name: "Paper Bags",
         description: "Attractive and portable paper bags",
-        source: "images/paper_bag_sample.jpg",
+        source: "images/paper_bag_sample.jpeg",
         color: "gold",
       },
     ];
