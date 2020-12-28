@@ -20,6 +20,7 @@ const Dimension = (props) => {
       <FormControl variant="outlined">
         <InputLabel htmlFor="required-size">Size</InputLabel>
         <Select
+          native
           value={state.size}
           onChange={handleChange}
           label="Size"
@@ -28,7 +29,7 @@ const Dimension = (props) => {
             id: "required-size",
           }}
         >
-          <option aria-label="None" value="None" />
+          <option aria-label="None" value="" />
           <option value={10}>10</option>
           <option value={20}>20</option>
           <option value={30}>30</option>

@@ -19,8 +19,7 @@ const Stepper = (props) => {
   const getStepContent = (step) => {
     switch (step) {
       case 0:
-        return "helo";
-      // return <Design />;
+        return <Design />;
       case 1:
         return <Dimension />;
       case 2:
@@ -53,7 +52,7 @@ const Stepper = (props) => {
           <Step key={label}>
             <StepLabel>{label}</StepLabel>
             <StepContent>
-              <Typography>{getStepContent(index)}</Typography>
+              {getStepContent(index)}
               <div className={classes.actionsContainer}>
                 <div>
                   <Button
