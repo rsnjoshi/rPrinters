@@ -4,6 +4,7 @@ import Aux from "./hoc/Aux";
 import Home from "./containers/Home/Home";
 import Products from "./containers/Products/Products";
 import Contact from "./containers/Contact/Contact";
+import Auth from "./containers/Auth/Auth";
 import {
   BrowserRouter as Router,
   Switch,
@@ -20,6 +21,7 @@ class App extends Component {
           <Layout>
             <Switch>
               <Route path="/quotation" component={QuotationForm} />
+              <Route path="/auth" component={Auth} />
               <Route path="/products" component={Products} />
               <Route path="/contact" component={Contact} />
               <Route path="/" exact component={Home} />

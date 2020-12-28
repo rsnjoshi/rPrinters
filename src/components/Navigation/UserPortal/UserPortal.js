@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import Popover from "@material-ui/core/Popover";
 import {
@@ -16,6 +17,7 @@ import Aux from "../../../hoc/Aux";
 
 const UserPortal = (props) => {
   const [anchorEl, setAnchorEl] = useState(null);
+  let history = useHistory();
 
   const handleClick = (event) => {
     // console.log(event.currentTarget);
@@ -28,6 +30,11 @@ const UserPortal = (props) => {
 
   const handleMouseLeave = () => {
     setAnchorEl(null);
+  };
+
+  const onSignInClickHandler = (typeName) => {
+    setAnchorEl(null);
+    history.push(`/auth/${typeName}`);
   };
 
   const open = Boolean(anchorEl);
@@ -59,10 +66,18 @@ const UserPortal = (props) => {
     <Aux>
       <ListItem button>
         <ButtonGroup variant="text" color="primary" aria-label="Log In">
-          <Button variant="outlined" color="primary">
+          <Button
+            variant="outlined"
+            color="primary"
+            onClick={() => onSignInClickHandler("signin")}
+          >
             Sign In
           </Button>
-          <Button variant="outlined" color="primary">
+          <Button
+            variant="outlined"
+            color="primary"
+            onClick={() => onSignInClickHandler("signup")}
+          >
             Sign Up
           </Button>
         </ButtonGroup>
