@@ -7,6 +7,8 @@ import {
   ListItemText,
   ListItemIcon,
   Divider,
+  ButtonGroup,
+  Button,
 } from "@material-ui/core";
 import { Person, ShoppingCart, ExitToApp } from "@material-ui/icons";
 import classes from "./UserPortal.module.css";
@@ -16,7 +18,7 @@ const UserPortal = (props) => {
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = (event) => {
-    console.log(event.currentTarget);
+    // console.log(event.currentTarget);
     setAnchorEl(event.currentTarget);
   };
 
@@ -30,6 +32,44 @@ const UserPortal = (props) => {
 
   const open = Boolean(anchorEl);
   const id = open ? "simple-popover" : undefined;
+  const loggedInContent = (
+    <Aux>
+      <ListItem button>
+        <ListItemIcon>
+          <Person />
+        </ListItemIcon>
+        <ListItemText primary="Namaste rPrinters" />
+      </ListItem>
+      <ListItem button>
+        <ListItemIcon>
+          <ShoppingCart />
+        </ListItemIcon>
+        <ListItemText primary="Verify Cart" />
+      </ListItem>
+      <Divider />
+      <ListItem button>
+        <ListItemIcon>
+          <ExitToApp />
+        </ListItemIcon>
+        <ListItemText secondary="LogOut" />
+      </ListItem>
+    </Aux>
+  );
+  const loggedOutContent = (
+    <Aux>
+      <ListItem button>
+        <ButtonGroup variant="text" color="primary" aria-label="Log In">
+          <Button variant="outlined" color="primary">
+            Sign In
+          </Button>
+          <Button variant="outlined" color="primary">
+            Sign Up
+          </Button>
+        </ButtonGroup>
+      </ListItem>
+    </Aux>
+  );
+
   return (
     <Aux>
       <AccountCircle onClick={handleClick} />
@@ -48,25 +88,7 @@ const UserPortal = (props) => {
         }}
       >
         <List disablePadding onMouseLeave={handleMouseLeave}>
-          <ListItem button>
-            <ListItemIcon>
-              <Person />
-            </ListItemIcon>
-            <ListItemText primary="Namaste rPrinters" />
-          </ListItem>
-          <ListItem button>
-            <ListItemIcon>
-              <ShoppingCart />
-            </ListItemIcon>
-            <ListItemText primary="Verify Cart" />
-          </ListItem>
-          <Divider />
-          <ListItem button>
-            <ListItemIcon>
-              <ExitToApp />
-            </ListItemIcon>
-            <ListItemText secondary="LogOut" />
-          </ListItem>
+          {loggedOutContent}
         </List>
       </Popover>
     </Aux>
