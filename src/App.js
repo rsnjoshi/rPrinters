@@ -10,6 +10,7 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
+import QuotationForm from "./components/QuotationForm/QuotationForm";
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
         <Router>
           <Layout>
             <Switch>
+              <Route path="/quotation" component={QuotationForm} />
               <Route path="/products" component={Products} />
               <Route path="/contact" component={Contact} />
               <Route path="/" exact component={Home} />
