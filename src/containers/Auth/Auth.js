@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Paper, Grid } from "@material-ui/core";
 import { Switch, Route } from "react-router-dom";
-import SignIn from "./SignIn/SingIn";
+import SignIn from "./SignIn/SignIn";
 import SignUp from "./SignUp/SignUp";
 import classes from "./Auth.module.css";
 import Aux from "../../hoc/Aux";
