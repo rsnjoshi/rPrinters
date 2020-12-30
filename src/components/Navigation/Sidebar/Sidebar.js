@@ -41,7 +41,7 @@ const Sidebar = (props) => {
     >
       <div className={classes.sidebar} role="presentation">
         <div className={classes.header}></div>
-        <NavbarItems hideSideBar={props.clickHide} />
+        <NavbarItems hideSideBar={props.clickHide} route={props.route} />
         <div className={classes.footer}>
           <UserPortal />
         </div>
