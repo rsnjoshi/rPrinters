@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
@@ -19,7 +19,7 @@ const NavbarItems = (props) => {
 
   return (
     <List className={NavClass.join(" ")}>
-      <NavLink to="/" exact style={{'text-decoration': 'none'}}>
+      <NavLink to="/" exact className={classes['nav-no-decoration']}>
         <ListItem 
         button
         onClick={toggler()}
@@ -28,7 +28,7 @@ const NavbarItems = (props) => {
           <ListItemText primary="Home" className={classes.navText}/>
         </ListItem>
       </NavLink>
-      <NavLink to="/products" style={{'text-decoration': 'none'}}>
+      <NavLink to="/products" className={classes['nav-no-decoration']}>
         <ListItem
         button
         onClick={toggler()}
@@ -37,7 +37,7 @@ const NavbarItems = (props) => {
           <ListItemText primary="Products" className={classes.navText}/>
         </ListItem>
       </NavLink>
-      <NavLink to="/contact" style={{'text-decoration': 'none'}}>
+      <NavLink to="/contact" className={classes['nav-no-decoration']}>
         <ListItem
         button
         onClick={toggler()}
