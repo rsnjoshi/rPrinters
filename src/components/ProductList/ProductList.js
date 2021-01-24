@@ -4,10 +4,11 @@ import classes from "./ProductList.module.css";
 import { withRouter } from "react-router-dom";
 import Aux from "../../hoc/Aux";
 import MobileStepper from '../UI/Stepper/MobileStepper'
+import metaData from './MetaData'
 
 class ProductList extends Component {
   state = {
-    itemList: ["Bag", "Envelope", "Box"],
+    itemList: metaData,
     selectedItem: null,
   };
 
@@ -45,12 +46,12 @@ class ProductList extends Component {
               direciton="column"
               className={classes.productDefination}
             >
-              <Typography variant="h5">{cardItem}</Typography>
-              <MobileStepper />
+              <Typography variant="h5">{cardItem.itemName}</Typography>
+              <MobileStepper payload={cardItem.metaData} />
               <Button
                 variant="outlined"
                 color="primary"
-                onClick={() => this.onOrderClickHandler(cardItem)}
+                onClick={() => this.onOrderClickHandler(cardItem.itemName)}
               >
                 ORDER
               </Button>
