@@ -3,6 +3,7 @@ import { Card, CardContent, Grid, Typography, Button } from "@material-ui/core";
 import classes from "./ProductList.module.css";
 import { withRouter } from "react-router-dom";
 import Aux from "../../hoc/Aux";
+import MobileStepper from '../UI/Stepper/MobileStepper'
 
 class ProductList extends Component {
   state = {
@@ -45,6 +46,7 @@ class ProductList extends Component {
               className={classes.productDefination}
             >
               <Typography variant="h5">{cardItem}</Typography>
+              <MobileStepper />
               <Button
                 variant="outlined"
                 color="primary"
