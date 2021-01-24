@@ -26,11 +26,12 @@ class Layout extends Component {
   render() {
     return (
       <Aux>
-        <Navbar menuClicked={this.sideDrawerToggleHandler} />
+        <Navbar menuClicked={this.sideDrawerToggleHandler} route={this.props.route}/>
         <Sidebar
           showSideDrawer={this.state.showSideDrawer}
           hideSideDrawer={this.sideDrawerToggleHandler}
           clickHide={this.forceHide}
+          route={this.props.route}
         />
         <Grid container className={classes.mainGridContainer}>
           {this.props.children}

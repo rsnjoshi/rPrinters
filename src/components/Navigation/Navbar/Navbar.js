@@ -25,7 +25,7 @@ class Navbar extends Component {
             <Menu />
           </IconButton>
           <Typography variant="h6">Ratna Printers</Typography>
-          <NavbarItems flow="row" />
+          <NavbarItems flow="row" route={this.props.route} />
           <UserPortal className={classes.UserIcon} />
         </Toolbar>
       </AppBar>

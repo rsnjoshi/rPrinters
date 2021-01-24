@@ -13,16 +13,29 @@ import {
 import QuotationForm from "./components/QuotationForm/QuotationForm";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {route: 'home'}
+    this.changeRoute = this.changeRoute.bind(this)
+  }
+
+  changeRoute(currentRoute) {
+    this.setState({
+      route: currentRoute
+    })
+  }
+
+
   render() {
     return (
       <Aux>
         <Router>
-          <Layout>
+          <Layout route={this.state.route}>
             <Switch>
               <Route path="/quotation" component={QuotationForm} />
-              <Route path="/products" component={Products} />
-              <Route path="/contact" component={Contact} />
-              <Route path="/" exact component={Home} />
+              <Route path="/products" render={(props) => <Products {...props} updateRoute={this.changeRoute} />} />
+              <Route path="/contact" render={(props) => <Contact {...props} updateRoute={this.changeRoute} />} />
+              <Route path="/" exact render={(props) => <Home {...props} updateRoute={this.changeRoute} />} />
               <Redirect to="/" />
             </Switch>
           </Layout>
